@@ -1,4 +1,4 @@
-module github.com/daoleno/uniswap-sdk-core
+module github.com/KyberNetwork/uniswap-sdk-core
 
 go 1.17
 

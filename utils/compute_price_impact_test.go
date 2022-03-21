@@ -4,9 +4,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/daoleno/uniswap-sdk-core/entities"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/KyberNetwork/uniswap-sdk-core/entities"
 )
 
 func TestComputePriceImpact(t *testing.T) {

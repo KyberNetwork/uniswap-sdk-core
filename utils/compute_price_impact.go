@@ -1,6 +1,6 @@
 package utils
 
-import "github.com/daoleno/uniswap-sdk-core/entities"
+import "github.com/KyberNetwork/uniswap-sdk-core/entities"
 
 /**
  * Returns the percent difference between the mid price and the execution price, i.e. price impact.
