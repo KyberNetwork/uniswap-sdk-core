@@ -1,3 +1,8 @@
+//go:generate go run github.com/tinylib/msgp -unexported -tests=false -v
+//msgp:tuple Price
+//msgp:shim Currency as:[]byte using:EncodeCurrency/DecodeCurrency
+//msgp:ignore Currency
+
 package entities
 
 import (
