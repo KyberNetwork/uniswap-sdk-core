@@ -75,16 +75,5 @@ func DecodeCurrency(encoded []byte) Currency {
 		panic(fmt.Errorf("unsupported Currency discriminator %d", discriminator))
 	}
 
-	// initialize self referencing pointers
-	switch currency := currency.(type) {
-	case *Ether:
-		currency.BaseCurrency.currency = currency
-	case *Native:
-		currency.BaseCurrency.currency = currency
-		currency.wrapped.BaseCurrency.currency = currency.wrapped
-	case *Token:
-		currency.BaseCurrency.currency = currency
-	}
-
 	return currency
 }
