@@ -32,3 +32,8 @@ func (e *Ether) Equal(other Currency) bool {
 func (e *Ether) Wrapped() *Token {
 	return WETH9[e.ChainId()]
 }
+
+func (e *Ether) AfterMsgpackUnmarshal() error {
+	e.BaseCurrency.currency = e
+	return nil
+}

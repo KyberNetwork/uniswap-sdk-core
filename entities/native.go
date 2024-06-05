@@ -33,3 +33,8 @@ func (n *Native) Equal(other Currency) bool {
 func (n *Native) Wrapped() *Token {
 	return n.wrapped
 }
+
+func (n *Native) AfterMsgpackUnmarshal() error {
+	n.BaseCurrency.currency = n
+	return nil
+}
