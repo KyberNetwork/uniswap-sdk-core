@@ -1,7 +1,3 @@
-//go:generate go run github.com/tinylib/msgp -unexported -tests=false -v
-//msgp:tuple Token
-//msgp:shim common.Address as:[]byte using:(common.Address).Bytes/common.BytesToAddress
-
 package entities
 
 import (
