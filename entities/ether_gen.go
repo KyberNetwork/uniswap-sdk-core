@@ -7,7 +7,7 @@ import (
 )
 
 // DecodeMsg implements msgp.Decodable
-func (z *etherInner) DecodeMsg(dc *msgp.Reader) (err error) {
+func (z *Ether) DecodeMsg(dc *msgp.Reader) (err error) {
 	var zb0001 uint32
 	zb0001, err = dc.ReadArrayHeader()
 	if err != nil {
@@ -39,7 +39,7 @@ func (z *etherInner) DecodeMsg(dc *msgp.Reader) (err error) {
 }
 
 // EncodeMsg implements msgp.Encodable
-func (z *etherInner) EncodeMsg(en *msgp.Writer) (err error) {
+func (z *Ether) EncodeMsg(en *msgp.Writer) (err error) {
 	// array header, size 1
 	err = en.Append(0x91)
 	if err != nil {
@@ -61,7 +61,7 @@ func (z *etherInner) EncodeMsg(en *msgp.Writer) (err error) {
 }
 
 // MarshalMsg implements msgp.Marshaler
-func (z *etherInner) MarshalMsg(b []byte) (o []byte, err error) {
+func (z *Ether) MarshalMsg(b []byte) (o []byte, err error) {
 	o = msgp.Require(b, z.Msgsize())
 	// array header, size 1
 	o = append(o, 0x91)
@@ -78,7 +78,7 @@ func (z *etherInner) MarshalMsg(b []byte) (o []byte, err error) {
 }
 
 // UnmarshalMsg implements msgp.Unmarshaler
-func (z *etherInner) UnmarshalMsg(bts []byte) (o []byte, err error) {
+func (z *Ether) UnmarshalMsg(bts []byte) (o []byte, err error) {
 	var zb0001 uint32
 	zb0001, bts, err = msgp.ReadArrayHeaderBytes(bts)
 	if err != nil {
@@ -110,7 +110,7 @@ func (z *etherInner) UnmarshalMsg(bts []byte) (o []byte, err error) {
 }
 
 // Msgsize returns an upper bound estimate of the number of bytes occupied by the serialized message
-func (z *etherInner) Msgsize() (s int) {
+func (z *Ether) Msgsize() (s int) {
 	s = 1
 	if z.BaseCurrency == nil {
 		s += msgp.NilSize
