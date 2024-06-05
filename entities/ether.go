@@ -1,6 +1,3 @@
-//go:generate go run github.com/tinylib/msgp -unexported -tests=false -v
-//msgp:tuple Ether
-
 package entities
 
 // Ether is the main usage of a 'native' currency, i.e. for Ethereum mainnet and all testnets
