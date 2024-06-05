@@ -14,13 +14,13 @@ type Currency interface {
 
 // BaseCurrency is an abstract struct, do not use it directly
 type BaseCurrency struct {
-	currency Currency
-	isNative bool   // Returns whether the currency is native to the chain and must be wrapped (e.g. Ether)
-	isToken  bool   // Returns whether the currency is a token that is usable in Uniswap without wrapping
-	chainId  uint   // The chain ID on which this currency resides
-	decimals uint   // The decimals used in representing currency amounts
-	symbol   string // The symbol of the currency, i.e. a short textual non-unique identifier
-	name     string // The name of the currency, i.e. a descriptive textual non-unique identifier
+	currency Currency `msgpack:"-"`
+	isNative bool     // Returns whether the currency is native to the chain and must be wrapped (e.g. Ether)
+	isToken  bool     // Returns whether the currency is a token that is usable in Uniswap without wrapping
+	chainId  uint     // The chain ID on which this currency resides
+	decimals uint     // The decimals used in representing currency amounts
+	symbol   string   // The symbol of the currency, i.e. a short textual non-unique identifier
+	name     string   // The name of the currency, i.e. a descriptive textual non-unique identifier
 }
 
 func (c *BaseCurrency) IsNative() bool {

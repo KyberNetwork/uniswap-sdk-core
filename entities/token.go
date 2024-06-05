@@ -73,3 +73,8 @@ func (t *Token) SortsBefore(other *Token) (bool, error) {
 func (t *Token) Wrapped() *Token {
 	return t
 }
+
+func (t *Token) AfterMsgpackUnmarshal() error {
+	t.BaseCurrency.currency = t
+	return nil
+}
